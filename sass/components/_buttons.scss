@@ -1,0 +1,37 @@
+.btn {
+    display: inline-block;
+    max-width: 350px;
+    padding: 12px;
+    border: 1px solid;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: .9rem;
+    letter-spacing: 2px;
+    color: #fff;
+    transition: 250ms all ease;
+}
+
+.card-btn {
+    background-color: $darkBlue;
+    border-color: $darkBlue;
+    margin-top: 20px;
+
+    &:hover {
+        background-color: $lightBlue;
+        border-color: $lightBlue;
+    }
+}
+
+.form-btn {
+    background: $darkBlue;
+    border-color: $darkBlue;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover,
+    &:focus {
+        background: $lightBlue;
+        border-color: $lightBlue;
+        outline: none;
+    }
+}

@@ -1,0 +1,143 @@
+body {
+    position: relative;
+}
+
+.nav-bar {
+    width: 100%;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background: $black;
+    transition: $transition;
+
+    .container,
+    nav ul {
+        display: flex;
+    }
+
+    .container {
+        position: relative;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: $white;
+        }
+
+        .logo {
+            margin-right: auto;
+            font-size: 1.25rem;
+            letter-spacing: 4px;
+            position: relative;
+            transition: $transition;
+
+            span {
+                transition: $transition;
+            }
+
+        }
+
+        nav {
+            display: none;
+
+            ul li a {
+                padding: 5px 10px;
+                margin-left: 10px;
+                font-size: 14px;
+                font-weight: 300;
+                transition: $transition;
+
+                &:hover {
+                    color: $lightBlue;
+                }
+            }
+        }
+        .mobile-icon {
+            width: 25px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            transition: $transition;
+
+            .bar {
+                display: block;
+                width: 100%;
+                height: 3px;
+                background: $white;
+                transform: rotate(0deg);
+                transition: $transition;
+                position: absolute;
+                opacity: 1;
+                left: 0;
+
+                &:nth-child(1) {
+                    top: 0px;
+                }
+                &:nth-child(2) {
+                    top: 8px;
+                }
+                &:nth-child(3) {
+                    top: 16px;
+                }
+            }
+        }
+        .open {
+            .bar:nth-child(1) {
+                top: 8px;
+                transform: rotate(135deg);
+            }
+            .bar:nth-child(2) {
+                opacity: 0;
+                left: -20px;
+            }
+            .bar:nth-child(3) {
+                top: 8px;
+                transform: rotate(-135deg);
+            }
+
+            &:hover .bar {
+                background-color: $black;
+            }
+        }
+
+    }
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 100vw;
+    height: 100vh;
+    background: $darkBlue;
+    transition: $transition;
+    z-index: 1999;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+
+        li {
+            text-align: center;
+            width: 100%;
+
+            a {
+                display: block;
+                padding: 15px 0;
+                transition: $transition;
+                &:hover {
+                    color: $black;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
